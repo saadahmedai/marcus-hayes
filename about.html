@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Marcus Hayes</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<style>
+.about-hero { padding-top:calc(var(--nav-h) + 80px);padding-bottom:72px;padding-left:5%;padding-right:5%;text-align:center;background:var(--bg);border-bottom:1px solid var(--border); }
+.about-hero h1 { font-size:clamp(2.2rem,5vw,3.6rem);margin-bottom:1rem; }
+.about-hero p { font-size:1.05rem;color:var(--muted);max-width:500px;margin:0 auto;line-height:1.8; }
+.story-block { display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding:80px 5%;max-width:1200px;margin:0 auto; }
+.story-block.alt { background:var(--bg); }
+.story-block.rev { direction:rtl; }
+.story-block.rev > * { direction:ltr; }
+.story-num { font-family:'Instrument Serif',serif;font-size:3.5rem;color:var(--border2);line-height:1;margin-bottom:1rem; }
+.story-block h2 { font-size:clamp(1.5rem,2.8vw,2rem);margin-bottom:1rem; }
+.story-block p { font-size:0.95rem;color:var(--muted);line-height:1.85;margin-bottom:0.9rem; }
+.story-block p:last-child { margin-bottom:0; }
+.story-img img, .story-img .img-ph { width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md); }
+.tl-section { background:var(--bg);padding:80px 5%; }
+.tl-inner { max-width:700px;margin:48px auto 0;position:relative; }
+.tl-inner::before { content:'';position:absolute;left:18px;top:0;bottom:0;width:1px;background:var(--border); }
+.tl-item { display:flex;gap:24px;padding-bottom:40px; }
+.tl-dot { width:36px;height:36px;border-radius:50%;background:var(--white);border:1.5px solid var(--blue);display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:600;color:var(--blue);flex-shrink:0;z-index:1; }
+.tl-body { padding-top:6px; }
+.tl-year { font-size:0.72rem;font-weight:600;color:var(--blue);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:4px; }
+.tl-body h4 { font-size:0.95rem;margin-bottom:5px; }
+.tl-body p { font-size:0.85rem;color:var(--muted);line-height:1.7; }
+.numbers-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px;margin-top:48px; }
+.num-card { background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:28px 20px;text-align:center;box-shadow:var(--shadow); }
+.num-card .n-val { font-family:'Instrument Serif',serif;font-size:2.2rem;color:var(--blue);display:block;margin-bottom:6px; }
+.num-card .n-lbl { font-size:0.82rem;color:var(--muted);line-height:1.5; }
+.big-quote-section { background:var(--text);padding:80px 5%;text-align:center; }
+blockquote { font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:#fff;max-width:680px;margin:0 auto 1.5rem;line-height:1.45; }
+blockquote::before { content:'"';display:block;font-size:4rem;color:var(--blue);line-height:0.8;margin-bottom:0.5rem;opacity:0.5; }
+cite { font-size:0.82rem;color:rgba(255,255,255,0.5);font-style:normal;letter-spacing:0.06em;text-transform:uppercase; }
+@media(max-width:800px){
+  .story-block{grid-template-columns:1fr;gap:32px;padding:60px 5%;}
+  .story-block.rev{direction:ltr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo.png" alt="Marcus Hayes" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <span class="nav-logo-text" style="display:none">Marcus Hayes</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Systems</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="dashboard.html">Systems</a>
+  <a href="about.html">About Marcus</a>
+</div>
+
+<div class="about-hero">
+  <div class="label-tag" style="display:table;margin:0 auto 1rem">The Creator</div>
+  <h1>Meet Marcus Hayes</h1>
+  <p>25 years old. Fresno, California. Failed for 2 years — then one strategy changed everything in 30 days.</p>
+</div>
+
+<section style="padding:60px 5% 0;text-align:center">
+  <div style="max-width:420px;margin:0 auto">
+    <img src="assets/images/marcus-portrait.jpg" alt="Marcus Hayes"
+         style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="img-ph" style="display:none;min-height:300px"><span style="font-size:2rem">📸</span><strong>marcus-portrait.jpg</strong></div>
+  </div>
+</section>
+
+<div class="story-block fade-up">
+  <div>
+    <div class="story-num">01</div>
+    <h2>Two Years of Trying Everything</h2>
+    <p>I grew up in Fresno, California. At 22, I decided I was done with the idea of a regular 9-to-5 and started trying everything online. Affiliate marketing first — built a blog, wrote articles for months. Nobody read them. Then dropshipping — lost $400, got one sale in three months.</p>
+    <p>I launched three YouTube channels over 18 months. All three failed. The last one hit 200 subscribers and flatlined completely. I was embarrassed. I almost quit everything entirely.</p>
+  </div>
+  <div class="story-img">
+    <img src="assets/images/marcus-early.jpg" alt="Early days" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="img-ph" style="display:none;min-height:260px"><span style="font-size:2rem">📸</span><strong>marcus-early.jpg</strong></div>
+  </div>
+</div>
+
+<div class="story-block alt rev fade-up">
+  <div>
+    <div class="story-num">02</div>
+    <h2>The Strategy That Changed Everything</h2>
+    <p>In early 2025 I discovered Niche Bending — instead of picking an overcrowded topic and hoping to compete, you combine a proven viral format from one category with a completely fresh market nobody has touched yet. You engineer the niche instead of guessing.</p>
+    <p>I also learned Script Bending — using known viral storytelling frameworks applied to completely original ideas. Suddenly I wasn't competing with anyone. I was creating something that didn't exist yet but that people clearly wanted to watch.</p>
+    <p>And critically, I learned to target USA, UK, Canada, and Australia — the countries advertisers pay the most for. That alone changed my earnings per 1,000 views by 8×.</p>
+  </div>
+  <div class="story-img">
+    <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;min-height:260px;display:flex;flex-direction:column;justify-content:center;gap:20px;box-shadow:var(--shadow)">
+      <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:1.05rem;color:var(--text);line-height:1.55">"What if the niche doesn't have to exist yet — you just create it?"</p>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:var(--blue-light);border-radius:0 12px 12px 12px;padding:10px 14px;font-size:0.85rem;color:var(--blue);max-width:80%">Market + Format = Untapped Niche 🎯</div>
+        <div style="background:var(--bg2);border-radius:12px 0 12px 12px;padding:10px 14px;font-size:0.85rem;color:var(--muted);max-width:80%;align-self:flex-end">Target USA/UK = 8× higher RPM 💰</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="story-block fade-up">
+  <div>
+    <div class="story-num">03</div>
+    <h2>The Month Everything Changed</h2>
+    <p>I launched a new Shorts channel in January 2025. No face. No microphone. Just AI visuals from Google Flow, AI voice from ElevenLabs, edited in CapCut. Three tools. Nothing else.</p>
+    <p>I applied Niche Bending for the topic, Script Bending for the format, and specifically designed content for USA and UK audiences. Two weeks in, one video hit 3 million views. By day 30, the channel had over 20 million total views and I was approved for the YouTube Partner Program.</p>
+    <p>The first payment was more than I'd made in a month at my last part-time job. I sat in my apartment and just stared at the number. I cried, honestly.</p>
+  </div>
+  <div class="story-img">
+    <img src="assets/images/marcus-viral.jpg" alt="Viral moment" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="img-ph" style="display:none;min-height:260px"><span style="font-size:2rem">📸</span><strong>marcus-viral.jpg</strong></div>
+  </div>
+</div>
+
+<div class="tl-section">
+  <div style="text-align:center">
+    <div class="label-tag" style="display:table;margin:0 auto 0.75rem">The Journey</div>
+    <h2 class="section-title">From Zero to Monetized</h2>
+  </div>
+  <div class="tl-inner">
+    <div class="tl-item fade-up"><div class="tl-dot">1</div><div class="tl-body"><div class="tl-year">2022–2023</div><h4>The Failures</h4><p>Affiliate marketing, blogging, dropshipping, 3 YouTube channels. Total earnings in 18 months: under $200. Almost quit completely.</p></div></div>
+    <div class="tl-item fade-up"><div class="tl-dot">2</div><div class="tl-body"><div class="tl-year">Early 2025</div><h4>Discovered Niche &amp; Script Bending</h4><p>Found the framework that changed everything. Spent 3 weeks studying before uploading a single video.</p></div></div>
+    <div class="tl-item fade-up"><div class="tl-dot">3</div><div class="tl-body"><div class="tl-year">Month 1</div><h4>20 Million Views on Shorts</h4><p>Three tools only. Hit 20M views targeting USA/UK audiences with the Niche Bending system.</p></div></div>
+    <div class="tl-item fade-up"><div class="tl-dot">4</div><div class="tl-body"><div class="tl-year">Month 1</div><h4>YouTube Partner Program — Approved</h4><p>Monetized in 30 days through Shorts. First real online income that felt significant.</p></div></div>
+    <div class="tl-item fade-up" style="padding-bottom:0"><div class="tl-dot">5</div><div class="tl-body"><div class="tl-year">Now</div><h4>Building Long-Form + Teaching Others</h4><p>Scaled to long-form for higher RPM. Built this system so anyone starting from zero can follow the exact same path.</p></div></div>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner" style="text-align:center">
+    <div class="label-tag" style="display:table;margin:0 auto 0.75rem">By the Numbers</div>
+    <h2 class="section-title">Real Results, No Exaggeration</h2>
+    <div class="numbers-grid stagger">
+      <div class="num-card"><span class="n-val">20M+</span><span class="n-lbl">Views in first 30 days</span></div>
+      <div class="num-card"><span class="n-val">30</span><span class="n-lbl">Days to YPP approval</span></div>
+      <div class="num-card"><span class="n-val">3</span><span class="n-lbl">Tools used — nothing more</span></div>
+      <div class="num-card"><span class="n-val">$0</span><span class="n-lbl">Starting budget required</span></div>
+      <div class="num-card"><span class="n-val">8×</span><span class="n-lbl">Higher earnings targeting USA/UK</span></div>
+      <div class="num-card"><span class="n-val">0</span><span class="n-lbl">Times face or real voice shown</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <blockquote>I don't teach this because it's trendy. I teach it because I was broke and desperate and this is what actually worked.</blockquote>
+  <cite>— Marcus Hayes, Fresno CA</cite>
+</div>
+
+<section style="text-align:center;background:var(--bg);border-top:1px solid var(--border)">
+  <div class="label-tag" style="display:table;margin:0 auto 0.75rem">Ready?</div>
+  <h2 class="section-title">Start with System 01 — It's Free</h2>
+  <p style="color:var(--muted);max-width:420px;margin:0 auto 2rem;line-height:1.8">If I could do this starting from failure, you can too. System 01 is free. No card needed.</p>
+  <a href="dashboard.html" class="btn btn-primary btn-lg">Access Free System →</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo-text">Marcus Hayes</div><p>The Niche Bending System — Faceless YouTube automation targeting USA/UK/CA/AU.</p></div>
+      <div class="footer-links-group"><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="dashboard.html">Systems</a></li><li><a href="about.html">About</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Marcus Hayes. All rights reserved.</p></div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

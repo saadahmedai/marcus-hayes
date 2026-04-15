@@ -1,0 +1,180 @@
+================================================
+MARCUS HAYES — SETUP & DEPLOYMENT GUIDE
+================================================
+Complete instructions for deploying to Vercel
+and connecting your Gumroad products.
+================================================
+
+STEP 1 — ADD YOUR IMAGES
+------------------------------------------------
+Place images in: assets/images/
+Required files (see IMAGE_INSTRUCTIONS.txt):
+  logo.png          (nav logo)
+  favicon.png       (browser tab icon)
+  marcus-hero.jpg   (homepage hero)
+  marcus-portrait.jpg
+  marcus-early.jpg
+  marcus-viral.jpg
+  marcus-working.jpg
+
+
+STEP 2 — UPDATE YOUR GUMROAD LINKS
+------------------------------------------------
+Search for these 3 placeholder strings in ALL
+HTML files and replace with your real links:
+
+  STARTER_KIT_GUMROAD_URL
+  → Replace with your Starter Kit Gumroad URL
+    e.g. https://yourname.gumroad.com/l/starter
+
+  FULL_COURSE_GUMROAD_URL
+  → Replace with your Full Course Gumroad URL
+    e.g. https://yourname.gumroad.com/l/fullcourse
+
+  $PRICE
+  → Replace with your actual prices
+    (appears on index.html in the systems grid)
+
+Files to update:
+  index.html       (2x STARTER, 2x COURSE, 2x PRICE)
+  dashboard.html   (2x STARTER, 2x COURSE)
+  about.html       (none needed)
+
+
+STEP 3 — SET UP GUMROAD LICENSE KEYS
+------------------------------------------------
+In your Gumroad dashboard for EACH product:
+
+1. Go to the product → Edit
+2. Scroll to "Delivery" section
+3. Enable "Generate a unique license key"
+4. Save
+
+When a customer buys, Gumroad automatically
+emails them a unique key. They enter it on
+your site at: yoursite.com/dashboard.html
+
+
+STEP 4 — DEPLOY TO VERCEL
+------------------------------------------------
+Option A — Vercel CLI (recommended):
+
+  1. Install: npm install -g vercel
+  2. In your project folder: vercel
+  3. Follow prompts (link to your Vercel account)
+  4. Done — you'll get a .vercel.app URL
+
+Option B — Vercel Dashboard (drag and drop):
+
+  1. Go to vercel.com → New Project
+  2. Drag your entire project folder
+  3. Click Deploy
+  4. Done
+
+Option C — GitHub:
+
+  1. Push project to a GitHub repository
+  2. Go to vercel.com → New Project → Import Git
+  3. Select your repo → Deploy
+  4. Auto-deploys on every git push
+
+
+STEP 5 — ADD ENVIRONMENT VARIABLES
+------------------------------------------------
+In Vercel: Project → Settings → Environment Variables
+
+Add these 3 variables (all environments):
+
+  Name: GUMROAD_STARTER_PRODUCT_ID
+  Value: [your Starter Kit product permalink]
+         (the short ID from your Gumroad URL)
+         e.g. if URL is gumroad.com/l/xyzabc
+              then value is: xyzabc
+
+  Name: GUMROAD_COURSE_PRODUCT_ID
+  Value: [your Full Course product permalink]
+
+  Name: CONTENT_SECRET
+  Value: [any long random string you make up]
+         e.g. mh_k9x2p7q1r4n8w3v6t5y0s
+         Keep this secret. Never share it.
+
+After adding variables → Redeploy the project
+(Vercel: Deployments → click latest → Redeploy)
+
+
+STEP 6 — CONNECT CUSTOM DOMAIN (optional)
+------------------------------------------------
+In Vercel: Project → Settings → Domains
+Add your domain → follow DNS instructions
+
+
+STEP 7 — TEST THE FULL FLOW
+------------------------------------------------
+1. Visit yoursite.com — see homepage
+2. Click "Access Free System" — see dashboard
+   with System 01 free content visible
+3. System 02 and 03 should show lock placeholders
+4. Buy your Starter Kit on Gumroad (use test mode)
+5. Get the license key from the email
+6. Enter it on dashboard.html — System 02 unlocks
+7. Test Full Course key — System 03 unlocks
+8. Confirm the tier badge in the nav updates
+
+
+WHAT EACH FILE DOES
+------------------------------------------------
+index.html        Marketing/landing page
+dashboard.html    Main product page (all systems)
+about.html        Marcus story page
+api/validate.js   Validates Gumroad license keys
+api/content.js    Serves protected HTML content
+vercel.json       Vercel configuration
+assets/css/       Shared stylesheet
+assets/js/        Shared JavaScript + course data
+assets/images/    Your photos and logo
+
+
+HOW THE SECURITY WORKS
+------------------------------------------------
+System 01 (free) content lives in dashboard.html.
+Anyone can read it — that's intentional.
+
+System 02 and 03 content lives ONLY in
+api/content.js on your Vercel server.
+It is never sent to the browser until a valid
+Gumroad key is verified server-side.
+
+Viewing page source, opening DevTools, or
+inspecting network requests will NOT reveal
+any paid content — it simply doesn't exist
+in the response until after key validation.
+
+The validated token is stored in localStorage
+so the user doesn't have to re-enter their key
+on every visit. Token expires after 30 days.
+
+
+UPDATING PRICES
+------------------------------------------------
+Search for "$PRICE" in index.html and replace
+with your actual prices. Example:
+  $PRICE → $17
+  $PRICE → $47
+
+Each appears twice in the systems grid section.
+
+
+SUPPORT FLOW FOR CUSTOMERS
+------------------------------------------------
+If a customer loses their key:
+  Direct them to their Gumroad receipt email
+  OR to gumroad.com → Library → view purchases
+
+If a key doesn't work:
+  Check that GUMROAD_STARTER_PRODUCT_ID and
+  GUMROAD_COURSE_PRODUCT_ID match the exact
+  product permalink (not the full URL, just
+  the short ID after /l/)
+
+================================================
