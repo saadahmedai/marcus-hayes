@@ -263,72 +263,67 @@ function tier3HTML() {
     <div class="sys-header">
       <div class="sys-badge sys-badge-gold">System 03 — AI Tools</div>
       <h2 class="sys-title">Copy-Paste Claude AI Prompts</h2>
-      <p class="sys-sub">Open claude.ai in a new tab. Copy a prompt below, paste it into Claude, and follow the guided workflow step by step.</p>
+      <p class="sys-sub">Open claude.ai in a new tab — free account. Copy either prompt, paste it, and Claude guides you through the rest step by step. No API key needed.</p>
     </div>
-
     <div class="prompt-tabs-inner">
-      <button class="ptab-inner active" onclick="switchPTab('protocol')">📋 Protocol Clerk</button>
-      <button class="ptab-inner" onclick="switchPTab('niche')">🎯 Niche Bending</button>
-      <button class="ptab-inner" onclick="switchPTab('script')">✍️ Script Stealing</button>
-      <button class="ptab-inner" onclick="switchPTab('thumb')">🖼 Thumbnail Generator</button>
+      <button class="ptab-inner active" onclick="switchPTab('rater2')">🎯 Niche Rater</button>
+      <button class="ptab-inner" onclick="switchPTab('script2')">✍️ Script Writer</button>
     </div>
-<div id="ptab-protocol" class="ptab-panel active">
-  <div class="prompt-card-inner">
-    <div class="pci-header">
-      <div>
-        <h3>Protocol Clerk</h3>
-        <p>Analyzes a competitor channel and builds your scripting SOP.</p>
+    <div id="ptab-rater2" class="ptab-panel active">
+      <div class="prompt-card-inner">
+        <div class="pci-header"><div><h3>Niche Rater Prompt</h3><p>Paste into Claude.ai. Claude asks for your market and format, then rates your idea out of 10 with detailed strengths, weaknesses, an improved version, and 3 Script Bent title examples.</p></div><button class="copy-btn-inner" onclick="copyInner('nrp','this')">Copy</button></div>
+        <div class="pci-body" id="nrp">You are an expert YouTube Niche Bending analyst. Your job is to rate niche bend ideas for faceless YouTube channels.
+
+First ask me: (1) What is your Market? (2) What is your Format? Optionally: Do you have an example title?
+
+Wait for my answers. Then provide:
+
+OVERALL SCORE: [X/10] — [verdict]
+COMPETITION LEVEL: [Low/Medium/High] — explain
+RPM POTENTIAL: [Low/Medium/High — $X–$X CPM] — explain
+VIRAL POTENTIAL: [Low/Medium/High] — explain
+WHAT MAKES IT STRONG: 2–3 specific strengths
+WHAT COULD BE IMPROVED: 2–3 weaknesses + how to fix each
+SHARPENED VERSION: improved niche bend keeping the core idea
+EXAMPLE TITLES (3): using Script Bending frameworks
+WHY USA/UK VIEWERS WOULD CLICK: specific explanation
+
+Be direct and honest. If the idea is weak, say so clearly then give the improved version.</div>
       </div>
-      <button class="copy-btn-inner" onclick="copyInner('protocolPrompt','this')">Copy</button>
     </div>
-    <div class="pci-body" id="protocolPrompt">
-PASTE YOUR FULL PROTOCOL CLERK PROMPT HERE
+    <div id="ptab-script2" class="ptab-panel">
+      <div class="prompt-card-inner">
+        <div class="pci-header"><div><h3>Script Writer Prompt — Full Production Package</h3><p>Get competitor transcripts first at youtubetotranscript.com. Then paste this into Claude.ai. Claude learns your niche style, asks about your topic and visual approach, writes the full script, and generates line-by-line Google Flow image prompts and Grok video prompts — pausing every 6 scenes.</p></div><button class="copy-btn-inner" onclick="copyInner('swp','this')">Copy</button></div>
+        <div class="pci-body" id="swp">You are an expert faceless YouTube content strategist and production director. Help me create a high-performing faceless YouTube video by learning from real competitor scripts, then generating a custom script and complete line-by-line visual prompts.
+
+Work through this step by step. Wait for my input at each stage.
+
+STEP 1 — TRANSCRIPT ANALYSIS
+Ask me to paste 2–3 transcripts from successful videos in my niche (from youtubetotranscript.com, labeled VIDEO 1, VIDEO 2 etc). Then analyze and extract a STYLE PROFILE covering: average word count, opening hook structure, vocabulary level and tone, transition phrases, sentence rhythm, video structure, visual style clues, common characters/settings, emotional triggers used, and signature repeated language.
+
+STEP 2 — VISUAL PREFERENCES
+Ask me: (1) Image-only (Google Flow + zoom in CapCut) or Image + Video (Google Flow + Grok clips)? (2) Visual mood/aesthetic? (3) Any recurring visual elements or settings for my channel brand?
+
+STEP 3 — TOPIC AND APPROACH
+Ask me: (1) Am I Niche Bending/Script Bending or making a similar video to the analyzed channels? (2) Specific video topic/title idea? (3) Target country (USA/UK/CA/AU)? (4) Video length (Short/Medium 4–6min/Long 8–12min)?
+
+STEP 4 — SCRIPT GENERATION
+Write the full script using the Style Profile, my visual preferences, target audience, and topic. Use AIDA structure. Label each scene [SCENE X]. Add [PAUSE] markers. Open with the hook immediately — no "Hey guys welcome back." Match sentence length and vocabulary to the style profile. After the script, write 3 TITLE OPTIONS using Script Bending frameworks.
+
+STEP 5 — VISUAL PROMPTS (LINE BY LINE)
+For each [SCENE X]:
+If image-only: IMAGE PROMPT (Google Flow): "[subject], [setting], [lighting/mood], [style] — 16:9"
+If image+video: IMAGE PROMPT (Google Flow): "[still image description]" AND VIDEO PROMPT (Grok): "[animation, camera movement, duration, mood]"
+
+IMPORTANT: Stop after Scene 6 and say "That's Part 1. Reply continue for the next part." Continue in batches of 6 until all scenes are covered.
+
+STEP 6 — COMPLETE PRODUCTION PACKAGE
+After all visual prompts: YouTube Description (SEO for my target country, first 2 sentences include keyword, timestamps, hashtags) + Tags (8–12) + Thumbnail Concept (which scene image, text overlay, color treatment, why target country viewer would click) + Style Consistency Note (3 things to keep consistent across all channel videos based on the Style Profile).
+
+Begin by asking me for my transcripts.</div>
+      </div>
     </div>
   </div>
-</div>
-<div id="ptab-niche" class="ptab-panel">
-  <div class="prompt-card-inner">
-    <div class="pci-header">
-      <div>
-        <h3>Niche Bending Protocol</h3>
-        <p>Creates 3 niche bends and builds your complete channel SOP.</p>
-      </div>
-      <button class="copy-btn-inner" onclick="copyInner('nichePrompt','this')">Copy</button>
-    </div>
-    <div class="pci-body" id="nichePrompt">
-PASTE YOUR FULL NICHE BENDING PROTOCOL HERE
-    </div>
-  </div>
-</div>
-<div id="ptab-script" class="ptab-panel">
-  <div class="prompt-card-inner">
-    <div class="pci-header">
-      <div>
-        <h3>Script Stealing Protocol</h3>
-        <p>Rebuilds competitor scripts into your own niche.</p>
-      </div>
-      <button class="copy-btn-inner" onclick="copyInner('scriptPrompt','this')">Copy</button>
-    </div>
-    <div class="pci-body" id="scriptPrompt">
-PASTE YOUR FULL SCRIPT STEALING PROTOCOL HERE
-    </div>
-  </div>
-</div>
-<div id="ptab-thumb" class="ptab-panel">
-  <div class="prompt-card-inner">
-    <div class="pci-header">
-      <div>
-        <h3>Thumbnail Generator Protocol</h3>
-        <p>Learns your style and creates matching thumbnail prompts.</p>
-      </div>
-      <button class="copy-btn-inner" onclick="copyInner('thumbPrompt','this')">Copy</button>
-    </div>
-    <div class="pci-body" id="thumbPrompt">
-PASTE YOUR FULL THUMBNAIL GENERATOR PROMPT HERE
-    </div>
-  </div>
-</div>
-</div>
 </section>`;
 }
 
