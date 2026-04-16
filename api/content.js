@@ -133,6 +133,23 @@ function tier2HTML() {
         </div>
       </div>
 
+      <!-- TITLE TEMPLATES -->
+      <div class="kit-block full-width">
+        <div class="kit-block-header">
+          <div class="kit-icon">⚙️</div>
+          <div>
+            <h3>How to Copy any YouTube Channel in 30 minutes</h3>
+          </div>
+        </div>
+        <div class="template-list">
+          <div class="tmpl"><span class="tmpl-num">01</span><div class="tmpl-body"><div class="tmpl-title">Break down their channel</div><div class="tmpl-ex">Start with titles & thumbnails, then break down their scripts. You need to understand how they structure them before you can 'script bend'</div></div></div>
+          <div class="tmpl"><span class="tmpl-num">02</span><div class="tmpl-body"><div class="tmpl-title">Niche Bend it</div><div class="tmpl-ex">Find a content category where the original viral format has never been used before. This way, you create a "blue ocean" for yourself.</div></div></div>
+          <div class="tmpl"><span class="tmpl-num">03</span><div class="tmpl-body"><div class="tmpl-title">Script Bend it</div><div class="tmpl-ex">Take all their best videos and rewrite their scripts following the same structure, but update the idea while adapting it to your niche.</div></div></div>
+          <div class="tmpl"><span class="tmpl-num">04</span><div class="tmpl-body"><div class="tmpl-title">Break down visuals</div><div class="tmpl-ex">Your goal is to be 5% better or 50% different. If you can achieve better quality - do it. If you can't, find how you can be different without changing the style too much.</div></div></div>
+          <div class="tmpl"><span class="tmpl-num">05</span><div class="tmpl-body"><div class="tmpl-title">Hire & launch</div><div class="tmpl-ex">Forget Upwork, hire from high-ROI markets like the CIS, and you'll be fine.</div></div></div>
+        </div>
+      </div>
+
       <!-- FIRST VIDEO CHECKLIST -->
       <div class="kit-block full-width">
         <div class="kit-block-header">
