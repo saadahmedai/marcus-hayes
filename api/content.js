@@ -328,8 +328,9 @@ PASTE YOUR FULL THUMBNAIL GENERATOR PROMPT HERE
     </div>
   </div>
 </div>
-  </div>
-  </section>
+</div>
+</section>`;
+}
 
 // ─── HANDLER ──────────────────────────────────────────────────────────────────
 module.exports = async (req, res) => {
