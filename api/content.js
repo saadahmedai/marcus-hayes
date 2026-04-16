@@ -137,6 +137,7 @@ function tier2HTML() {
       <div class="kit-block full-width">
         <div class="kit-block-header">
           <div class="kit-icon">⚙️</div>
+          <p>Use this strategy to copy any YouTube Channel in 30 minutes. Or use the prompts in the 'System 3 AI - Tools'</p>
           <div>
             <h3>How to Copy any YouTube Channel in 30 minutes</h3>
           </div>
