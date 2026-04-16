@@ -51,6 +51,12 @@ nav {
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
 
 .nav-logo img { height: 36px; width: auto; }
+
+@media (max-width: 768px) {
+  .nav-logo img {
+    height: 30px;
+  }
+}
 .nav-logo-text { font-family: 'Instrument Serif', serif; font-size: 1.25rem; color: var(--text); letter-spacing: -0.02em; }
 
 .nav-right { display: flex; align-items: center; gap: 12px; }
