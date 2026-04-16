@@ -153,6 +153,17 @@ section { padding: 80px 5%; }
 
 /* ── SYSTEM 1 (FREE) CONTENT ── */
 .cheatsheet-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 40px; }
+@media (max-width: 900px) {
+    .cheatsheet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cheatsheet-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .cs-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); transition: all var(--t); }
 .cs-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--border2); }
 .cs-icon { font-size: 1.5rem; margin-bottom: 12px; }
