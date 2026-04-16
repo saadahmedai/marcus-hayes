@@ -82,7 +82,24 @@
 .soc-price small { font-family:'DM Sans',sans-serif;font-size:0.78rem;color:var(--muted);font-weight:400; }
 
 /* ── FOR WHO ── */
-.for-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:40px; }
+.for-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+}
+
+@media (max-width: 992px) {
+    .for-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .for-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .for-card { background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:all var(--t); }
 .for-card:hover { border-color:var(--blue);box-shadow:var(--shadow-md); }
 .for-card .avatar { width:52px;height:52px;border-radius:50%;background:var(--blue-light);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem; }
@@ -176,20 +193,7 @@
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item"><span class="t-num">20M+</span><span class="t-lbl">Shorts views</span></div>
-    <div class="trust-sep"></div>
-    <div class="trust-item"><span class="t-num">30 days</span><span class="t-lbl">To monetization</span></div>
-    <div class="trust-sep"></div>
-    <div class="trust-item"><span class="t-num">$0</span><span class="t-lbl">Starting budget</span></div>
-    <div class="trust-sep"></div>
-    <div class="trust-item"><span class="t-num">USA/UK/CA/AU</span><span class="t-lbl">High-RPM targeting</span></div>
-    <div class="trust-sep"></div>
-    <div class="trust-item"><span class="t-num">3 tools</span><span class="t-lbl">Total. Nothing more.</span></div>
-  </div>
-</div>
+
 
 <!-- 3 SYSTEMS OVERVIEW -->
 <section style="background:var(--bg)">
