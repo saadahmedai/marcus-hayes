@@ -1,0 +1,71 @@
+================================================
+IMAGE INSTRUCTIONS — marcus-hosted
+================================================
+Place each file in: assets/images/
+Filename must match EXACTLY (case-sensitive).
+================================================
+
+LOGO & FAVICON
+------------------------------------------------
+logo.png
+  Size: 200 x 50px (or similar wide ratio)
+  Background: transparent
+  Used in: top-left nav on all pages
+  Design: "Marcus Hayes" wordmark or icon + text
+
+favicon.png
+  Size: 64 x 64px (square)
+  Background: can be colored or transparent
+  Used in: browser tab on all pages
+  Design: "M" monogram or simple icon
+
+------------------------------------------------
+HOMEPAGE (index.html)
+------------------------------------------------
+marcus-hero.jpg      1200 x 800px
+  Location: Hero section, right side
+  Show: Marcus at desk, confident, laptop open
+  showing YouTube analytics. Warm lighting.
+  Professional but approachable.
+
+marcus-working.jpg   800 x 600px
+  Location: "My story" teaser section
+  Show: Marcus working at laptop, focused.
+  Coffee shop or clean home office.
+
+------------------------------------------------
+ABOUT PAGE (about.html)
+------------------------------------------------
+marcus-portrait.jpg  600 x 750px
+  Location: Top of about page
+  Show: Relaxed close-up portrait. Casual smile.
+  "Relatable guy who made it" energy.
+
+marcus-early.jpg     800 x 500px
+  Location: "Two Years of Trying" story block
+  Show: Marcus looking frustrated or exhausted
+  at a laptop late at night. Represents his
+  struggle phase before discovering the system.
+
+marcus-viral.jpg     800 x 500px
+  Location: "The Month Everything Changed" block
+  Show: Marcus looking shocked/excited at phone
+  or laptop screen showing a huge view count.
+  Genuine, energetic reaction.
+
+------------------------------------------------
+COLOR PALETTE (for graphics you create)
+------------------------------------------------
+Background:   #FFFFFF
+Primary text: #111111
+Accent blue:  #2563EB
+Light blue:   #EFF6FF
+Muted text:   #6B7280
+Border:       #E5E7EB
+Green:        #10B981
+
+FONTS ON SITE
+------------------------------------------------
+Headings: Instrument Serif (Google Fonts)
+Body:     DM Sans (Google Fonts)
+================================================
