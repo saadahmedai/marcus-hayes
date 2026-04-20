@@ -1,0 +1,185 @@
+================================================
+IMAGE INSTRUCTIONS — marcus-hosted
+================================================
+Place each file in: assets/images/
+Filename must match EXACTLY (case-sensitive).
+================================================
+
+LOGO & FAVICON
+------------------------------------------------
+logo.png
+  Size: 200 x 50px (or similar wide ratio)
+  Background: transparent
+  Used in: top-left nav on all pages
+  Design: "Marcus Hayes" wordmark or icon + text
+
+favicon.png
+  Size: 64 x 64px (square)
+  Background: can be colored or transparent
+  Used in: browser tab on all pages
+  Design: "M" monogram or simple icon
+
+------------------------------------------------
+HOMEPAGE (index.html)
+------------------------------------------------
+marcus-hero.jpg      1200 x 800px
+  Location: Hero section, right side
+  Show: Marcus at desk, confident, laptop open
+  showing YouTube analytics. Warm lighting.
+  Professional but approachable.
+
+marcus-working.jpg   800 x 600px
+  Location: "My story" teaser section
+  Show: Marcus working at laptop, focused.
+  Coffee shop or clean home office.
+
+------------------------------------------------
+ABOUT PAGE (about.html)
+------------------------------------------------
+marcus-portrait.jpg  600 x 750px
+  Location: Top of about page
+  Show: Relaxed close-up portrait. Casual smile.
+  "Relatable guy who made it" energy.
+
+marcus-early.jpg     800 x 500px
+  Location: "Two Years of Trying" story block
+  Show: Marcus looking frustrated or exhausted
+  at a laptop late at night. Represents his
+  struggle phase before discovering the system.
+
+marcus-viral.jpg     800 x 500px
+  Location: "The Month Everything Changed" block
+  Show: Marcus looking shocked/excited at phone
+  or laptop screen showing a huge view count.
+  Genuine, energetic reaction.
+
+------------------------------------------------
+COLOR PALETTE (for graphics you create)
+------------------------------------------------
+Background:   #FFFFFF
+Primary text: #111111
+Accent blue:  #2563EB
+Light blue:   #EFF6FF
+Muted text:   #6B7280
+Border:       #E5E7EB
+Green:        #10B981
+
+FONTS ON SITE
+------------------------------------------------
+Headings: Instrument Serif (Google Fonts)
+Body:     DM Sans (Google Fonts)
+================================================
+
+================================================
+COURSE PAGE IMAGES (added in latest update)
+================================================
+These are real image placeholders used inside the
+course modules. Replace each file with a real image
+matching the exact filename and dimensions shown.
+
+------------------------------------------------
+COURSE 1 — THE NICHE BENDING CHEAT SHEET
+------------------------------------------------
+niche-bending-intro.jpg    1280 × 720px (16:9)
+  MODULE 1 — What Niche Bending Is
+  Show: A split diagram — left side shows a crowded
+  cluster of channels all making identical content
+  (overlapping circles or stacked icons), right side
+  shows one channel standing alone in open space.
+  Style: Clean, minimal. Dark background, white icons
+  or light grey shapes. Can be made in Canva.
+
+market-format-grid.jpg     1280 × 720px (16:9)
+  MODULE 2 — Market + Format Formula
+  Show: A 3×3 grid table. Y-axis: 3 Markets (History,
+  Finance, Animals). X-axis: 3 Formats (Tier List,
+  "Every X Explained", "If X does Y"). Each cell
+  shows the resulting niche bend in italics.
+  Style: White background, blue header row and column,
+  clean table lines. Make in Canva or Google Slides.
+
+rpm-countries-map.jpg      1280 × 720px (16:9)
+  MODULE 3 — High-RPM Countries
+  Show: World map with USA, UK, Canada, Australia
+  highlighted in blue (#2563EB). All other countries
+  in light grey. Each highlighted country has a small
+  "$$$" or flag label.
+  HOW TO MAKE: Go to mapchart.net → World map →
+  colour USA/UK/CA/AU blue → export as PNG → resize.
+
+four-mistakes.jpg          1280 × 720px (16:9)
+  MODULE 4 — Beginner Mistakes
+  Show: A 2×2 card grid. Each card has a red X icon
+  at the top and one mistake title:
+  Card 1: "Wrong Niche"
+  Card 2: "Wrong Audience"
+  Card 3: "No Editorial Layer"
+  Card 4: "Too Much at Once"
+  Style: White cards on light grey (#F9FAFB) background.
+  Red X in circle (#DC2626). Make in Canva.
+
+niche-bend-examples.jpg    1280 × 720px (16:9)
+  MODULE 5 — 5 Niche Bend Examples
+  Show: 5 horizontal rows, each showing:
+  [Format Source] → blue arrow → [New Market]
+  Example row 1: "Gaming Tier Lists" → "Animal Rankings"
+  Example row 2: "True Crime Storytelling" → "Finance Disasters"
+  Example row 3: "Every President Explained" → "Every Monarch"
+  Example row 4: "Food Ingredient Ranking" → "Debt Ranking"
+  Example row 5: "Pet Behaviour Format" → "Wildlife Behaviour"
+  Style: White background, blue arrows, clean sans-serif
+  font. Make in Canva using a simple table layout.
+
+------------------------------------------------
+SYSTEMS / DASHBOARD PAGE THUMBNAILS
+------------------------------------------------
+thumb-system1.jpg          700 × 394px (16:9)
+  DASHBOARD — System 01 card thumbnail
+  Show: The Niche Bending formula: "Market + Format = 
+  Your Niche" in large text on a clean background.
+  Style: White bg, dark text, blue "=" and "+".
+  Or: a simple icon of a target/bullseye. Canva.
+
+thumb-system2.jpg          700 × 394px (16:9)
+  DASHBOARD — System 02 card thumbnail
+  Show: A checklist graphic — 5 items with checkboxes,
+  first 2 ticked. Or: the number "30" in large type
+  with "Niche Ideas" as a subtitle.
+  Style: Clean, white background, blue accents.
+
+thumb-system3.jpg          700 × 394px (16:9)
+  DASHBOARD — System 03 card thumbnail
+  Show: A collage of 3 tool logos/icons (Google Flow,
+  Grok, CapCut) connected by arrows showing the
+  production workflow. Or simply the text "Complete
+  System" in large type with a star icon.
+  Style: Amber/gold background (#FEF3C7) with dark text
+  to match the Full Course colour scheme.
+
+================================================
+COLOUR PALETTE (for any graphics you create)
+================================================
+White:        #FFFFFF
+Light grey:   #F9FAFB
+Border grey:  #E5E7EB
+Dark text:    #111111
+Muted text:   #6B7280
+Blue accent:  #2563EB
+Light blue:   #EFF6FF
+Green:        #10B981
+Amber:        #F59E0B
+Amber light:  #FEF3C7
+Red:          #DC2626
+
+FONTS ON SITE
+Headings: Instrument Serif (Google Fonts)
+Body:     DM Sans (Google Fonts)
+
+HOW TO ADD AN IMAGE
+1. Design or source the image at the correct dimensions
+2. Export as JPG (photos) or PNG (diagrams/graphics)
+3. Name the file exactly as shown above
+4. Place it in: assets/images/
+5. The placeholder will automatically be replaced
+   when the browser finds the real image file
+================================================
