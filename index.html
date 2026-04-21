@@ -22,7 +22,7 @@
 .proof-stat .num{font-family:'Instrument Serif',serif;font-size:1.6rem;color:var(--text);display:block;line-height:1;margin-bottom:3px;}
 .proof-stat .lbl{font-size:0.78rem;color:var(--muted);font-weight:500;}
 .hero-img-wrap{position:relative;}
-.hero-img-wrap img,.hero-img-wrap .img-ph{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);}
+.hero-img-wrap img,.hero-img-wrap .img-ph{width:100%;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);}
 .hero-float-card{position:absolute;bottom:-20px;left:-20px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;}
 .hero-float-card .icon{width:40px;height:40px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
 .hero-float-card .val{font-family:'Instrument Serif',serif;font-size:1.2rem;color:var(--text);line-height:1;}
@@ -36,7 +36,7 @@
 .proof-section{background:var(--bg);border-bottom:1px solid var(--border);padding:72px 5%;}
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
 .proof-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
-.proof-card .proof-img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.proof-card .proof-img{width:100%;object-fit:cover;}
 .proof-card .proof-img.img-ph{min-height:160px;border-radius:0;}
 .proof-caption{padding:14px 16px;}
 .proof-caption strong{font-size:0.85rem;font-weight:600;display:block;margin-bottom:3px;}
@@ -68,7 +68,7 @@
 .for-card h4{font-size:0.9rem;margin-bottom:5px;text-align:center;}
 .for-card p{font-size:0.82rem;color:var(--muted);line-height:1.65;text-align:center;}
 .teaser-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1200px;margin:0 auto;}
-.teaser-grid img,.teaser-grid .img-ph{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
+.teaser-grid img,.teaser-grid .img-ph{width:100%;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
 .pull-quote{margin-top:20px;padding:18px 20px;background:var(--blue-light);border-left:3px solid var(--blue);border-radius:0 var(--radius-sm) var(--radius-sm) 0;}
 .pull-quote p{font-family:'Instrument Serif',serif;font-style:italic;font-size:1rem;color:var(--text);line-height:1.6;}
 .pull-quote cite{display:block;margin-top:8px;font-size:0.78rem;color:var(--blue);font-style:normal;font-weight:600;}
@@ -142,7 +142,7 @@
            style="width:100%;height:auto;display:block;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)"
            onload="this.nextElementSibling.style.display='none'"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="img-ph" style="display:none;aspect-ratio:4/3;border-radius:var(--radius-lg)">
+      <div class="img-ph" style="display:none;border-radius:var(--radius-lg)">
         <span class="ph-icon">📸</span>
         <span class="ph-name">marcus-hero.jpg</span>
         <span class="ph-dims">1200 × 900px</span>
@@ -185,7 +185,7 @@
           <img src="assets/images/analytics-views.jpg" alt="YouTube analytics — 20M+ views"
                onload="this.nextElementSibling.style.display='none'"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-          <div class="img-ph" style="aspect-ratio:16/9;min-height:160px">
+          <div class="img-ph" style="min-height:160px">
             <span class="ph-icon">📊</span>
             <span class="ph-name">analytics-views.jpg</span>
             <span class="ph-desc">YouTube Studio views graph — 20M+ in 30 days</span>
@@ -201,7 +201,7 @@
           <img src="assets/images/monetization-proof.jpg" alt="YPP approval"
                onload="this.nextElementSibling.style.display='none'"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-          <div class="img-ph" style="aspect-ratio:16/9;min-height:160px">
+          <div class="img-ph" style="min-height:160px">
             <span class="ph-icon">💰</span>
             <span class="ph-name">monetization-proof.jpg</span>
             <span class="ph-desc">YPP approval or earnings screen</span>
@@ -217,7 +217,7 @@
           <img src="assets/images/workflow-preview.jpg" alt="Production workflow"
                onload="this.nextElementSibling.style.display='none'"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-          <div class="img-ph" style="aspect-ratio:16/9;min-height:160px">
+          <div class="img-ph" style="min-height:160px">
             <span class="ph-icon">🎬</span>
             <span class="ph-name">workflow-preview.jpg</span>
             <span class="ph-desc">Production workflow — Google Flow → Grok → CapCut</span>
@@ -360,7 +360,7 @@
            style="width:100%;height:auto;display:block;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)"
            onload="this.nextElementSibling.style.display='none'"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="img-ph" style="display:none;aspect-ratio:4/3;border-radius:var(--radius-lg)">
+      <div class="img-ph" style="display:none;border-radius:var(--radius-lg)">
         <span class="ph-icon">📸</span>
         <span class="ph-name">marcus-working.jpg</span>
         <span class="ph-dims">800 × 600px</span>
