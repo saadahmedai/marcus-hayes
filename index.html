@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Marcus Hayes — The Niche Bending System</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<style>
+.hero{padding-top:calc(var(--nav-h) + 72px);padding-bottom:80px;padding-left:5%;padding-right:5%;}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:#d1fae5;color:#065f46;border-radius:6px;padding:4px 12px;font-size:0.75rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1.25rem;}
+.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:#10b981;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.6rem);margin-bottom:1.25rem;letter-spacing:-0.02em;}
+.hero h1 em{font-style:italic;color:var(--blue);}
+.hero-desc{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:0.75rem;max-width:460px;}
+.hero-credibility{font-size:0.875rem;color:var(--text);font-weight:500;margin-bottom:0.4rem;}
+.hero-friction{font-size:0.82rem;color:var(--muted);margin-bottom:2rem;font-style:italic;}
+.hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:2.5rem;}
+.hero-proof{display:flex;gap:28px;flex-wrap:wrap;padding-top:2rem;border-top:1px solid var(--border);}
+.proof-stat .num{font-family:'Instrument Serif',serif;font-size:1.6rem;color:var(--text);display:block;line-height:1;margin-bottom:3px;}
+.proof-stat .lbl{font-size:0.78rem;color:var(--muted);font-weight:500;}
+.hero-img-wrap{position:relative;}
+.hero-img-wrap img,.hero-img-wrap .img-ph{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);}
+.hero-float-card{position:absolute;bottom:-20px;left:-20px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;}
+.hero-float-card .icon{width:40px;height:40px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.hero-float-card .val{font-family:'Instrument Serif',serif;font-size:1.2rem;color:var(--text);line-height:1;}
+.hero-float-card .sub{font-size:0.72rem;color:var(--muted);margin-top:2px;}
+.trust-bar{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:28px 5%;}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:10px;}
+.trust-item .t-num{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--text);}
+.trust-item .t-lbl{font-size:0.82rem;color:var(--muted);line-height:1.3;max-width:80px;}
+.trust-sep{width:1px;height:36px;background:var(--border);}
+.proof-section{background:var(--bg);border-bottom:1px solid var(--border);padding:72px 5%;}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;}
+.proof-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+.proof-card .proof-img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.proof-card .proof-img.img-ph{min-height:160px;border-radius:0;}
+.proof-caption{padding:14px 16px;}
+.proof-caption strong{font-size:0.85rem;font-weight:600;display:block;margin-bottom:3px;}
+.proof-caption span{font-size:0.78rem;color:var(--muted);}
+.systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.sys-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all var(--t);display:flex;flex-direction:column;}
+.sys-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px);}
+.sys-card-header{padding:24px 24px 20px;border-bottom:1px solid var(--border);}
+.sc-tier{font-size:0.7rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:6px;}
+.sc-free{color:var(--muted);}
+.sc-starter{color:var(--blue);}
+.sc-course{color:#92400e;}
+.sc-stage{font-size:0.78rem;color:var(--blue);font-weight:500;margin-bottom:8px;}
+.sys-card-header h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;margin-bottom:6px;}
+.sys-card-header p{font-size:0.83rem;color:var(--muted);line-height:1.65;}
+.sys-card-body{padding:20px 24px;background:var(--bg);flex:1;display:flex;flex-direction:column;}
+.sc-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted2);margin-bottom:5px;}
+.sc-problem-text{font-size:0.85rem;color:var(--muted);margin-bottom:14px;line-height:1.6;font-style:italic;}
+.sc-features{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+.sc-features li{font-size:0.82rem;color:var(--muted);display:flex;gap:8px;align-items:flex-start;}
+.sc-features li::before{content:'→';color:var(--blue);flex-shrink:0;font-size:0.7rem;margin-top:2px;}
+.sc-why{font-size:0.78rem;color:var(--muted);line-height:1.6;margin-bottom:16px;padding:10px 12px;background:var(--white);border-radius:var(--radius-sm);border:1px solid var(--border);}
+.sc-price{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--text);margin-bottom:12px;}
+.sc-price small{font-family:'DM Sans',sans-serif;font-size:0.78rem;color:var(--muted);font-weight:400;}
+.for-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:40px;}
+.for-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:all var(--t);}
+.for-card:hover{border-color:var(--blue);box-shadow:var(--shadow-md);}
+.for-card .avatar{width:52px;height:52px;border-radius:50%;background:var(--blue-light);margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;}
+.for-card h4{font-size:0.9rem;margin-bottom:5px;text-align:center;}
+.for-card p{font-size:0.82rem;color:var(--muted);line-height:1.65;text-align:center;}
+.teaser-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;max-width:1200px;margin:0 auto;}
+.teaser-grid img,.teaser-grid .img-ph{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
+.pull-quote{margin-top:20px;padding:18px 20px;background:var(--blue-light);border-left:3px solid var(--blue);border-radius:0 var(--radius-sm) var(--radius-sm) 0;}
+.pull-quote p{font-family:'Instrument Serif',serif;font-style:italic;font-size:1rem;color:var(--text);line-height:1.6;}
+.pull-quote cite{display:block;margin-top:8px;font-size:0.78rem;color:var(--blue);font-style:normal;font-weight:600;}
+.final-cta{background:var(--text);color:#fff;text-align:center;position:relative;overflow:hidden;}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(37,99,235,0.2),transparent);pointer-events:none;}
+.final-cta h2{font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;margin-bottom:1rem;}
+.final-cta p{font-size:0.95rem;color:rgba(255,255,255,0.65);max-width:480px;margin:0 auto 2rem;line-height:1.85;}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;padding-top:16px;gap:40px;}
+  .hero-img-wrap{order:-1;}
+  .hero-float-card{bottom:-12px;left:12px;}
+  .systems-grid{grid-template-columns:1fr;}
+  .proof-grid{grid-template-columns:1fr;}
+  .teaser-grid{grid-template-columns:1fr;gap:32px;}
+  .trust-sep{display:none;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:2rem;}
+  .hero-proof{gap:20px;}
+  .hero-ctas{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo.png" alt="Marcus Hayes" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+      <span class="nav-logo-text" style="display:none">Marcus Hayes</span>
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="dashboard.html">Systems</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="dashboard.html">Systems</a>
+  <a href="about.html">About Marcus</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><div class="dot"></div>Faceless YouTube — Free to Start</div>
+      <h1>A Practical System for Building a YouTube Channel <em>Without Showing Your Face</em></h1>
+      <p class="hero-desc">No camera. No microphone. No prior experience. This is the exact method I used to publish my first faceless channel, reach 20 million views, and get approved for monetization — in 30 days.</p>
+      <p class="hero-credibility">Built by a creator who failed three channels before this one worked.</p>
+      <p class="hero-friction">System 1 is completely free. No card required.</p>
+      <div class="hero-ctas">
+        <a href="dashboard.html" class="btn btn-primary btn-lg">Start with the Free System →</a>
+        <a href="about.html" class="btn btn-secondary btn-lg">How This Started</a>
+      </div>
+      <div class="hero-proof">
+        <div class="proof-stat"><span class="num">20M+</span><span class="lbl">Views in 30 days</span></div>
+        <div class="proof-stat"><span class="num">30 days</span><span class="lbl">To monetization</span></div>
+        <div class="proof-stat"><span class="num">$0</span><span class="lbl">To get started</span></div>
+        <div class="proof-stat"><span class="num">3 tools</span><span class="lbl">That's all it took</span></div>
+      </div>
+    </div>
+    <div class="hero-img-wrap fade-up">
+      <!-- IMAGE: marcus-hero.jpg — Marcus at desk, laptop open, relaxed and confident. Not posed. -->
+      <img src="assets/images/marcus-hero.jpg" alt="Marcus Hayes"
+           style="width:100%;height:auto;display:block;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)"
+           onload="this.nextElementSibling.style.display='none'"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="img-ph" style="display:none;aspect-ratio:4/3;border-radius:var(--radius-lg)">
+        <span class="ph-icon">📸</span>
+        <span class="ph-name">marcus-hero.jpg</span>
+        <span class="ph-dims">1200 × 900px</span>
+        <span class="ph-desc">Marcus at desk, confident, laptop open. Warm lighting.</span>
+      </div>
+      <div class="hero-float-card">
+        <div class="icon">📈</div>
+        <div><div class="val">20M+ views</div><div class="sub">First channel · Month 1</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="t-num">20M+</span><span class="t-lbl">Shorts views</span></div>
+    <div class="trust-sep"></div>
+    <div class="trust-item"><span class="t-num">30 days</span><span class="t-lbl">To monetization</span></div>
+    <div class="trust-sep"></div>
+    <div class="trust-item"><span class="t-num">$0</span><span class="t-lbl">Starting budget</span></div>
+    <div class="trust-sep"></div>
+    <div class="trust-item"><span class="t-num">USA/UK/CA/AU</span><span class="t-lbl">High-RPM targeting</span></div>
+    <div class="trust-sep"></div>
+    <div class="trust-item"><span class="t-num">3 tools</span><span class="t-lbl">Total. Nothing more.</span></div>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF -->
+<section class="proof-section">
+  <div class="section-inner">
+    <div style="max-width:520px">
+      <div class="label-tag">Real Results</div>
+      <h2 class="section-title">Not Theory. This Actually Happened.</h2>
+      <p class="section-sub">These are screenshots from the channel. The results came from following the same system you're about to get access to.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="img-wrap aspect-wide" style="border-radius:0">
+          <img src="assets/images/analytics-views.jpg" alt="YouTube analytics — 20M+ views"
+               onload="this.nextElementSibling.style.display='none'"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="img-ph" style="aspect-ratio:16/9;min-height:160px">
+            <span class="ph-icon">📊</span>
+            <span class="ph-name">analytics-views.jpg</span>
+            <span class="ph-desc">YouTube Studio views graph — 20M+ in 30 days</span>
+          </div>
+        </div>
+        <div class="proof-caption">
+          <strong>20M+ views in the first 30 days</strong>
+          <span>YouTube Studio analytics — first channel, first month</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="img-wrap aspect-wide" style="border-radius:0">
+          <img src="assets/images/monetization-proof.jpg" alt="YPP approval"
+               onload="this.nextElementSibling.style.display='none'"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="img-ph" style="aspect-ratio:16/9;min-height:160px">
+            <span class="ph-icon">💰</span>
+            <span class="ph-name">monetization-proof.jpg</span>
+            <span class="ph-desc">YPP approval or earnings screen</span>
+          </div>
+        </div>
+        <div class="proof-caption">
+          <strong>Monetized in 30 days</strong>
+          <span>YouTube Partner Program approval — Day 30</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="img-wrap aspect-wide" style="border-radius:0">
+          <img src="assets/images/workflow-preview.jpg" alt="Production workflow"
+               onload="this.nextElementSibling.style.display='none'"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="img-ph" style="aspect-ratio:16/9;min-height:160px">
+            <span class="ph-icon">🎬</span>
+            <span class="ph-name">workflow-preview.jpg</span>
+            <span class="ph-desc">Production workflow — Google Flow → Grok → CapCut</span>
+          </div>
+        </div>
+        <div class="proof-caption">
+          <strong>3 tools. That's the whole workflow.</strong>
+          <span>Google Flow → Grok → CapCut. Nothing else needed.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT LADDER -->
+<section style="background:var(--white)">
+  <div class="section-inner">
+    <div style="max-width:560px">
+      <div class="label-tag">Three Systems</div>
+      <h2 class="section-title">Each System Builds on the Last</h2>
+      <p class="section-sub">Start free. Once the method makes sense to you and you want to go further, the next system is there. No pressure to upgrade — but most people do once they see the first results.</p>
+    </div>
+    <div class="systems-grid stagger">
+
+      <div class="sys-card">
+        <div class="sys-card-header">
+          <div class="sc-tier sc-free">System 01 — Free</div>
+          <div class="sc-stage">Stage: Understand the method</div>
+          <h3>The Niche Bending Cheat Sheet</h3>
+          <p>Learn how the Niche Bending formula works — and why it gives you an edge over every generic faceless channel competing for the same topics.</p>
+        </div>
+        <div class="sys-card-body">
+          <div class="sc-label">Problem it solves</div>
+          <div class="sc-problem-text">"I don't know what to make videos about — everything feels taken already."</div>
+          <div class="sc-label">What you get</div>
+          <ul class="sc-features">
+            <li>The Market + Format formula explained simply</li>
+            <li>Why targeting USA/UK/CA/AU pays 5–10× more per view</li>
+            <li>5 real niche bend examples you can model</li>
+            <li>The most common beginner mistakes</li>
+            <li>CPM breakdown by country and niche</li>
+          </ul>
+          <div class="sc-why">Best for: complete beginners who want to understand the method before spending any time or money.</div>
+          <div class="sc-price">Free <small>— No purchase required</small></div>
+          <a href="dashboard.html" class="btn btn-secondary" style="width:100%;justify-content:center">Access Now →</a>
+        </div>
+      </div>
+
+      <div class="sys-card">
+        <div class="sys-card-header">
+          <div class="sc-tier sc-starter">System 02 — Starter Kit</div>
+          <div class="sc-stage">Stage: Launch your first channel</div>
+          <h3>The Niche Bending Starter Kit</h3>
+          <p>Stop researching and start producing. Thirty ready-to-use niche ideas, title templates, and a step-by-step checklist for your first video.</p>
+        </div>
+        <div class="sys-card-body">
+          <div class="sc-label">Problem it solves</div>
+          <div class="sc-problem-text">"I understand the concept but I don't know what my first video should actually be."</div>
+          <div class="sc-label">What you get</div>
+          <ul class="sc-features">
+            <li>30 done-for-you niche bend ideas across 6 niches</li>
+            <li>10 title templates using Script Bending frameworks</li>
+            <li>First video checklist — 22 steps, idea to publish</li>
+            <li>Competitor research walkthrough</li>
+            <li>Channel setup guide and thumbnail basics</li>
+          </ul>
+          <div class="sc-why">Best for: people who've read System 1 and are ready to pick a direction and produce their first video this week.</div>
+          <div class="sc-price">$PRICE <small>— One-time</small></div>
+          <a href="https://marcushayes.gumroad.com/l/starter" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center">Get Starter Kit →</a>
+        </div>
+      </div>
+
+      <div class="sys-card" style="border-color:var(--amber)">
+        <div class="sys-card-header" style="background:var(--amber-light)">
+          <div class="sc-tier sc-course">System 03 — Full Course ⭐</div>
+          <div class="sc-stage">Stage: Build a full income system</div>
+          <h3>The Complete Faceless YouTube System</h3>
+          <p>The full production and growth system. Script to screen to monetization — every step covered, including the AI protocols that handle most of the heavy lifting.</p>
+        </div>
+        <div class="sys-card-body">
+          <div class="sc-label">Problem it solves</div>
+          <div class="sc-problem-text">"I want to build this seriously — production, growth, monetization, and staying safe with YouTube's AI policies."</div>
+          <div class="sc-label">What you get</div>
+          <ul class="sc-features">
+            <li>12 full course modules with progress tracking</li>
+            <li>Google Flow, Grok, and CapCut production workflows</li>
+            <li>Script Writer AI prompt — full scripts + visual prompts</li>
+            <li>4 advanced Claude AI protocols (Protocol Clerk, Niche Bending, Script Stealing, Thumbnail Generator)</li>
+            <li>Posting strategy, SEO, monetization, and YouTube safety guide</li>
+          </ul>
+          <div class="sc-why">Best for: people who've launched at least one video and want to scale this into a real income stream with a repeatable system.</div>
+          <div class="sc-price">$PRICE <small>— One-time</small></div>
+          <a href="https://marcushayes.gumroad.com/l/fullcourse" target="_blank" class="btn btn-primary" style="width:100%;justify-content:center;background:var(--amber);border-color:var(--amber);color:#000">Get Full Course →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section style="background:var(--bg)">
+  <div class="section-inner">
+    <div style="max-width:560px">
+      <div class="label-tag">Who This Is For</div>
+      <h2 class="section-title">You Don't Need Experience. You Need a System.</h2>
+      <p class="section-sub">This was built for people starting from zero. No audience, no equipment, no budget. The only requirement is being willing to follow the steps.</p>
+    </div>
+    <div class="for-grid stagger">
+      <div class="for-card">
+        <div class="avatar">👩</div>
+        <h4>Stay-at-Home Parents</h4>
+        <p>Work during nap times and evenings. No commute, no fixed schedule, no showing your face. Your voice doesn't even need to be in it.</p>
+      </div>
+      <div class="for-card">
+        <div class="avatar">🧑</div>
+        <h4>Students (14+)</h4>
+        <p>Start with zero money. The free tools cover everything you need to begin. If it works, you have income before you graduate. If it doesn't, you've lost nothing.</p>
+      </div>
+      <div class="for-card">
+        <div class="avatar">💼</div>
+        <h4>People With a Day Job</h4>
+        <p>One or two videos a week is enough to build something. This isn't about going viral once — it's about building consistent output while your job pays the bills.</p>
+      </div>
+      <div class="for-card">
+        <div class="avatar">🌏</div>
+        <h4>Creators Outside the USA</h4>
+        <p>You can live anywhere and still earn in dollars. The system is specifically designed to target US and UK audiences — where the ad money is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCUS STORY PREVIEW -->
+<section style="background:var(--white)">
+  <div class="teaser-grid" style="padding:0 5%">
+    <div class="fade-up">
+      <!-- IMAGE: marcus-working.jpg — Marcus at laptop, natural and unposed. Coffee shop or home desk. -->
+      <img src="assets/images/marcus-working.jpg" alt="Marcus working"
+           style="width:100%;height:auto;display:block;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)"
+           onload="this.nextElementSibling.style.display='none'"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="img-ph" style="display:none;aspect-ratio:4/3;border-radius:var(--radius-lg)">
+        <span class="ph-icon">📸</span>
+        <span class="ph-name">marcus-working.jpg</span>
+        <span class="ph-dims">800 × 600px</span>
+        <span class="ph-desc">Marcus at laptop, natural and unposed.</span>
+      </div>
+      <div class="pull-quote">
+        <p>"I spent two years trying things that didn't work. When I finally found Niche Bending, I didn't want anyone else to waste that kind of time the way I did."</p>
+        <cite>— Marcus Hayes, Fresno CA</cite>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="label-tag">The Creator</div>
+      <h2 class="section-title">Three Failed Channels Before One Finally Worked</h2>
+      <p style="color:var(--muted);font-size:0.95rem;line-height:1.85;margin-bottom:0.9rem">I'm Marcus. I'm 25 and I'm from Fresno, California. Between 2022 and 2024 I tried affiliate marketing, ran a blog nobody read, tested dropshipping, and launched three YouTube channels. None of it worked in any meaningful way.</p>
+      <p style="color:var(--muted);font-size:0.95rem;line-height:1.85;margin-bottom:1.5rem">In early 2025 I found the Niche Bending framework. I launched one Shorts channel using three tools and in 30 days I hit 20 million views and got approved for the YouTube Partner Program. I'm not teaching this because it's a trendy topic. I'm teaching it because I know what two wasted years actually feels like.</p>
+      <a href="about.html" class="btn btn-secondary">Read the Full Story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div style="position:relative;z-index:1">
+    <div class="label-tag" style="background:rgba(37,99,235,0.3);color:#93c5fd;margin:0 auto 1.25rem;display:table">No Risk to Start</div>
+    <h2>Start with System 1. It's Free.</h2>
+    <p>No upsell on the first page. No email required. Just the Niche Bending formula — explained clearly, with examples you can use straight away. If it makes sense to you, the next steps are there when you're ready.</p>
+    <a href="dashboard.html" class="btn btn-primary btn-lg">Access the Free System →</a>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:1rem;margin-bottom:0">Takes about 15 minutes to read. No sign-up needed.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-text">Marcus Hayes</div>
+        <p>A faceless YouTube system built on Niche Bending. Designed for beginners. Targeting USA/UK/CA/AU.</p>
+      </div>
+      <div class="footer-links-group">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Systems</a></li>
+          <li><a href="about.html">About Marcus</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-group">
+        <h5>Get Access</h5>
+        <ul>
+          <li><a href="https://marcushayes.gumroad.com/l/free-guide" target="_blank">Free Guide</a></li>
+          <li><a href="https://marcushayes.gumroad.com/l/starter" target="_blank">Starter Kit</a></li>
+          <li><a href="https://marcushayes.gumroad.com/l/fullcourse" target="_blank">Full Course</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Marcus Hayes. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

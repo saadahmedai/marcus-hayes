@@ -1,0 +1,319 @@
+================================================
+IMAGE INSTRUCTIONS — marcus-hosted
+================================================
+Place each file in: assets/images/
+Filename must match EXACTLY (case-sensitive).
+================================================
+
+LOGO & FAVICON
+------------------------------------------------
+logo.png
+  Size: 200 x 50px (or similar wide ratio)
+  Background: transparent
+  Used in: top-left nav on all pages
+  Design: "Marcus Hayes" wordmark or icon + text
+
+favicon.png
+  Size: 64 x 64px (square)
+  Background: can be colored or transparent
+  Used in: browser tab on all pages
+  Design: "M" monogram or simple icon
+
+------------------------------------------------
+HOMEPAGE (index.html)
+------------------------------------------------
+marcus-hero.jpg      1200 x 800px
+  Location: Hero section, right side
+  Show: Marcus at desk, confident, laptop open
+  showing YouTube analytics. Warm lighting.
+  Professional but approachable.
+
+marcus-working.jpg   800 x 600px
+  Location: "My story" teaser section
+  Show: Marcus working at laptop, focused.
+  Coffee shop or clean home office.
+
+------------------------------------------------
+ABOUT PAGE (about.html)
+------------------------------------------------
+marcus-portrait.jpg  600 x 750px
+  Location: Top of about page
+  Show: Relaxed close-up portrait. Casual smile.
+  "Relatable guy who made it" energy.
+
+marcus-early.jpg     800 x 500px
+  Location: "Two Years of Trying" story block
+  Show: Marcus looking frustrated or exhausted
+  at a laptop late at night. Represents his
+  struggle phase before discovering the system.
+
+marcus-viral.jpg     800 x 500px
+  Location: "The Month Everything Changed" block
+  Show: Marcus looking shocked/excited at phone
+  or laptop screen showing a huge view count.
+  Genuine, energetic reaction.
+
+------------------------------------------------
+COLOR PALETTE (for graphics you create)
+------------------------------------------------
+Background:   #FFFFFF
+Primary text: #111111
+Accent blue:  #2563EB
+Light blue:   #EFF6FF
+Muted text:   #6B7280
+Border:       #E5E7EB
+Green:        #10B981
+
+FONTS ON SITE
+------------------------------------------------
+Headings: Instrument Serif (Google Fonts)
+Body:     DM Sans (Google Fonts)
+================================================
+
+================================================
+COURSE PAGE IMAGES (added in latest update)
+================================================
+These are real image placeholders used inside the
+course modules. Replace each file with a real image
+matching the exact filename and dimensions shown.
+
+------------------------------------------------
+COURSE 1 — THE NICHE BENDING CHEAT SHEET
+------------------------------------------------
+niche-bending-intro.jpg    1280 × 720px (16:9)
+  MODULE 1 — What Niche Bending Is
+  Show: A split diagram — left side shows a crowded
+  cluster of channels all making identical content
+  (overlapping circles or stacked icons), right side
+  shows one channel standing alone in open space.
+  Style: Clean, minimal. Dark background, white icons
+  or light grey shapes. Can be made in Canva.
+
+market-format-grid.jpg     1280 × 720px (16:9)
+  MODULE 2 — Market + Format Formula
+  Show: A 3×3 grid table. Y-axis: 3 Markets (History,
+  Finance, Animals). X-axis: 3 Formats (Tier List,
+  "Every X Explained", "If X does Y"). Each cell
+  shows the resulting niche bend in italics.
+  Style: White background, blue header row and column,
+  clean table lines. Make in Canva or Google Slides.
+
+rpm-countries-map.jpg      1280 × 720px (16:9)
+  MODULE 3 — High-RPM Countries
+  Show: World map with USA, UK, Canada, Australia
+  highlighted in blue (#2563EB). All other countries
+  in light grey. Each highlighted country has a small
+  "$$$" or flag label.
+  HOW TO MAKE: Go to mapchart.net → World map →
+  colour USA/UK/CA/AU blue → export as PNG → resize.
+
+four-mistakes.jpg          1280 × 720px (16:9)
+  MODULE 4 — Beginner Mistakes
+  Show: A 2×2 card grid. Each card has a red X icon
+  at the top and one mistake title:
+  Card 1: "Wrong Niche"
+  Card 2: "Wrong Audience"
+  Card 3: "No Editorial Layer"
+  Card 4: "Too Much at Once"
+  Style: White cards on light grey (#F9FAFB) background.
+  Red X in circle (#DC2626). Make in Canva.
+
+niche-bend-examples.jpg    1280 × 720px (16:9)
+  MODULE 5 — 5 Niche Bend Examples
+  Show: 5 horizontal rows, each showing:
+  [Format Source] → blue arrow → [New Market]
+  Example row 1: "Gaming Tier Lists" → "Animal Rankings"
+  Example row 2: "True Crime Storytelling" → "Finance Disasters"
+  Example row 3: "Every President Explained" → "Every Monarch"
+  Example row 4: "Food Ingredient Ranking" → "Debt Ranking"
+  Example row 5: "Pet Behaviour Format" → "Wildlife Behaviour"
+  Style: White background, blue arrows, clean sans-serif
+  font. Make in Canva using a simple table layout.
+
+------------------------------------------------
+SYSTEMS / DASHBOARD PAGE THUMBNAILS
+------------------------------------------------
+thumb-system1.jpg          700 × 394px (16:9)
+  DASHBOARD — System 01 card thumbnail
+  Show: The Niche Bending formula: "Market + Format = 
+  Your Niche" in large text on a clean background.
+  Style: White bg, dark text, blue "=" and "+".
+  Or: a simple icon of a target/bullseye. Canva.
+
+thumb-system2.jpg          700 × 394px (16:9)
+  DASHBOARD — System 02 card thumbnail
+  Show: A checklist graphic — 5 items with checkboxes,
+  first 2 ticked. Or: the number "30" in large type
+  with "Niche Ideas" as a subtitle.
+  Style: Clean, white background, blue accents.
+
+thumb-system3.jpg          700 × 394px (16:9)
+  DASHBOARD — System 03 card thumbnail
+  Show: A collage of 3 tool logos/icons (Google Flow,
+  Grok, CapCut) connected by arrows showing the
+  production workflow. Or simply the text "Complete
+  System" in large type with a star icon.
+  Style: Amber/gold background (#FEF3C7) with dark text
+  to match the Full Course colour scheme.
+
+================================================
+COLOUR PALETTE (for any graphics you create)
+================================================
+White:        #FFFFFF
+Light grey:   #F9FAFB
+Border grey:  #E5E7EB
+Dark text:    #111111
+Muted text:   #6B7280
+Blue accent:  #2563EB
+Light blue:   #EFF6FF
+Green:        #10B981
+Amber:        #F59E0B
+Amber light:  #FEF3C7
+Red:          #DC2626
+
+FONTS ON SITE
+Headings: Instrument Serif (Google Fonts)
+Body:     DM Sans (Google Fonts)
+
+HOW TO ADD AN IMAGE
+1. Design or source the image at the correct dimensions
+2. Export as JPG (photos) or PNG (diagrams/graphics)
+3. Name the file exactly as shown above
+4. Place it in: assets/images/
+5. The placeholder will automatically be replaced
+   when the browser finds the real image file
+================================================
+
+================================================
+NEW IMAGES ADDED IN LATEST UPDATE
+================================================
+These images were added when fixing placeholder
+display and replacing suggestion boxes.
+
+------------------------------------------------
+INDEX.HTML — Proof Section
+------------------------------------------------
+analytics-views.jpg       900 × 506px (16:9)
+  Used in: Homepage proof section + About page
+  Show: YouTube Studio analytics dashboard showing
+  20M+ views in a 30-day period. Crop tightly to
+  the chart. No need to show revenue figures.
+  Blur specific numbers if preferred.
+  TIP: Screenshot from YouTube Studio → Analytics
+  → Overview → set date range to the first 30 days.
+
+monetization-proof.jpg    900 × 506px (16:9)
+  Used in: Homepage proof section
+  Show: YouTube Studio YPP approval screen OR
+  the Earnings dashboard. You can blur the exact
+  dollar amount if preferred.
+  TIP: Screenshot from YouTube Studio → Earn tab.
+
+workflow-preview.jpg      900 × 506px (16:9)
+  Used in: Homepage proof section
+  Show: CapCut desktop editing interface with an
+  actual video project open showing the timeline,
+  OR a split-screen mockup of Google Flow + Grok +
+  CapCut logos with arrows showing the workflow.
+  TIP: Screenshot your own CapCut project while
+  editing. Crop to show the timeline clearly.
+
+------------------------------------------------
+ABOUT.HTML — Story Sections
+------------------------------------------------
+failed-analytics.jpg      1280 × 720px (16:9)
+  Used in: About page — "Two Years of Trying" section
+  Show: Old YouTube Studio analytics showing low,
+  flat views on a failed channel. Can be blurred
+  for privacy. Even a very low-view screenshot
+  adds authenticity to the story.
+  TIP: Can be a blurred or anonymised screenshot
+  from any old channel you no longer use.
+
+------------------------------------------------
+COURSE 2 — MODULE 1 & MODULE 7
+------------------------------------------------
+monetization-paths.jpg    1280 × 720px (16:9)
+  Used in: Course 2, Module 1 (Picking Your Channel)
+  Show: A two-path flowchart comparing:
+  LEFT PATH — YouTube Shorts: 10M views in 90 days
+  → YPP approved → lower RPM per view
+  RIGHT PATH — Long-form: 4,000 watch hours in
+  12 months → YPP approved → higher RPM per view
+  Style: Clean flowchart on white background with
+  blue arrows. Make in Canva using arrow shapes.
+
+thumbnail-comparison.jpg  1280 × 720px (16:9)
+  Used in: Course 2, Module 7 (Thumbnail Basics)
+  Show: Side-by-side comparison:
+  LEFT — Weak thumbnail: too much text, low contrast,
+  unclear subject, hard to read on mobile.
+  RIGHT — Strong thumbnail: 3–4 bold words, high
+  contrast, one clear subject, readable on mobile.
+  Use the same topic for both so the comparison
+  is clear. Make both versions in Canva then
+  combine as a side-by-side screenshot.
+
+------------------------------------------------
+COURSE 3 — MODULE 4
+------------------------------------------------
+googleflow-screenshot.jpg 1280 × 720px (16:9)
+  Used in: Course 3, Module 4 (Google Flow)
+  Show: Screenshot of the Google Flow interface at
+  labs.google/fx/tools/flow — showing the prompt
+  input box on the left and a generated cinematic
+  image result on the right. Demonstrates how clean
+  and simple the tool is.
+  TIP: Go to the tool, type a test prompt, generate
+  an image, then screenshot the full interface.
+
+------------------------------------------------
+REUSED IMAGES (same file, multiple locations)
+------------------------------------------------
+analytics-views.jpg → Used on both homepage AND
+  about page "Numbers" section. One file serves both.
+
+market-format-grid.jpg → Already listed as a
+  Course 1 Module 2 image. Now also used on the
+  About page "Discovering the System" section.
+  Same file, no need to create a new one.
+
+================================================
+TOTAL IMAGE FILES NEEDED (full list)
+================================================
+Homepage:
+  logo.png
+  favicon.png
+  marcus-hero.jpg
+  marcus-working.jpg
+  analytics-views.jpg        ← also used on About
+  monetization-proof.jpg
+  workflow-preview.jpg
+
+About page:
+  marcus-portrait.jpg
+  marcus-early.jpg
+  marcus-viral.jpg
+  failed-analytics.jpg       ← new
+  market-format-grid.jpg     ← reused from Course 1
+
+Dashboard:
+  thumb-system1.jpg
+  thumb-system2.jpg
+  thumb-system3.jpg
+
+Course 1:
+  niche-bending-intro.jpg
+  market-format-grid.jpg     ← reused on About page
+  rpm-countries-map.jpg
+  four-mistakes.jpg
+  niche-bend-examples.jpg
+
+Course 2:
+  monetization-paths.jpg     ← new
+  thumbnail-comparison.jpg   ← new
+
+Course 3:
+  googleflow-screenshot.jpg  ← new
+
+================================================
