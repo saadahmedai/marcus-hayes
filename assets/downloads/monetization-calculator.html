@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Monetization Calculator — Marcus Hayes</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:#f9fafb;color:#111;min-height:100vh;}
+
+/* Header */
+.header{background:#2563eb;color:#fff;padding:14px 5%;display:flex;align-items:center;gap:12px;}
+.header img{width:32px;height:32px;border-radius:8px;}
+.header-brand{font-size:1rem;font-weight:600;}
+.header-doc{font-size:0.78rem;color:#bfdbfe;margin-left:auto;}
+
+/* Page title */
+.page-title{background:#fff;border-bottom:1px solid #e5e7eb;padding:28px 5% 24px;}
+.page-title h1{font-size:1.5rem;font-weight:600;margin-bottom:4px;}
+.page-title p{font-size:0.875rem;color:#6b7280;line-height:1.7;}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:28px 5%;max-width:1100px;margin:0 auto;}
+
+/* Panels */
+.panel{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+.panel-title{font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:#2563eb;margin-bottom:20px;}
+
+/* Form controls */
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:0.78rem;font-weight:600;color:#374151;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em;}
+.field input[type=range]{width:100%;accent-color:#2563eb;cursor:pointer;height:4px;}
+.range-row{display:flex;justify-content:space-between;align-items:center;margin-top:6px;}
+.range-val{font-size:1rem;font-weight:600;color:#111;}
+.range-min,.range-max{font-size:0.72rem;color:#9ca3af;}
+
+select,input[type=number]{
+  width:100%;padding:10px 12px;
+  border:1.5px solid #e5e7eb;border-radius:8px;
+  font-family:'DM Sans',sans-serif;font-size:0.9rem;
+  color:#111;background:#fff;outline:none;
+  transition:border-color 0.2s;
+}
+select:focus,input[type=number]:focus{border-color:#2563eb;}
+
+.radio-group{display:flex;flex-direction:column;gap:8px;}
+.radio-option{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1.5px solid #e5e7eb;border-radius:8px;cursor:pointer;transition:all 0.2s;}
+.radio-option:hover{border-color:#2563eb;background:#eff6ff;}
+.radio-option.selected{border-color:#2563eb;background:#eff6ff;}
+.radio-option input{accent-color:#2563eb;}
+.radio-label{font-size:0.875rem;font-weight:500;}
+.radio-cpm{font-size:0.75rem;color:#6b7280;margin-left:auto;}
+
+/* Results */
+.results-panel{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,0.06);}
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px;}
+.result-card{border-radius:10px;padding:16px 18px;text-align:center;}
+.result-card.primary{background:#eff6ff;border:1px solid #bfdbfe;}
+.result-card.secondary{background:#f9fafb;border:1px solid #e5e7eb;}
+.result-card .r-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:#6b7280;margin-bottom:6px;}
+.result-card .r-val{font-size:1.6rem;font-weight:600;color:#111;line-height:1;}
+.result-card .r-sub{font-size:0.72rem;color:#9ca3af;margin-top:4px;}
+.result-card.primary .r-val{color:#2563eb;}
+
+/* Breakdown table */
+.breakdown{width:100%;border-collapse:collapse;font-size:0.83rem;}
+.breakdown th{text-align:left;padding:8px 10px;background:#f3f4f6;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:#6b7280;}
+.breakdown td{padding:8px 10px;border-bottom:1px solid #f3f4f6;color:#374151;}
+.breakdown tr:last-child td{border-bottom:none;}
+.breakdown .hl{color:#2563eb;font-weight:600;}
+
+/* YPP milestone bar */
+.milestone{margin-top:20px;}
+.milestone-title{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:#6b7280;margin-bottom:10px;}
+.m-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.m-label{font-size:0.78rem;color:#374151;flex:1;}
+.m-bar-wrap{flex:2;height:8px;background:#f3f4f6;border-radius:8px;overflow:hidden;}
+.m-bar{height:100%;border-radius:8px;transition:width 0.5s;}
+.m-pct{font-size:0.72rem;font-weight:600;width:38px;text-align:right;}
+
+/* Disclaimer */
+.disclaimer{background:#fef3c7;border:1px solid #fde68a;border-radius:10px;padding:14px 16px;font-size:0.78rem;color:#92400e;line-height:1.6;margin-top:24px;}
+
+/* Full width row */
+.full-row{grid-column:1/-1;}
+
+@media(max-width:700px){
+  .layout{grid-template-columns:1fr;}
+  .results-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:420px){
+  .results-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="logo.png" alt="Marcus Hayes" onerror="this.style.display='none'"/>
+  <span class="header-brand">Marcus Hayes</span>
+  <span class="header-doc">Monetization Calculator — Course 3, Module 11</span>
+</div>
+
+<div class="page-title">
+  <h1>YouTube Monetization Calculator</h1>
+  <p>Estimate your projected monthly earnings based on views, niche, target country, and monetization path.<br>Adjust any input and results update instantly.</p>
+</div>
+
+<div class="layout">
+
+  <!-- INPUT PANEL 1: VIEWS -->
+  <div class="panel">
+    <div class="panel-title">Video Performance</div>
+
+    <div class="field">
+      <label>Monthly Views</label>
+      <input type="range" id="views" min="1000" max="5000000" step="1000" value="100000" oninput="calc()"/>
+      <div class="range-row">
+        <span class="range-min">1K</span>
+        <span class="range-val" id="views-val">100,000</span>
+        <span class="range-max">5M</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Average View Duration</label>
+      <input type="range" id="avd" min="10" max="100" step="5" value="45" oninput="calc()"/>
+      <div class="range-row">
+        <span class="range-min">10%</span>
+        <span class="range-val" id="avd-val">45%</span>
+        <span class="range-max">100%</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Video Type</label>
+      <div class="radio-group">
+        <label class="radio-option selected" onclick="selectType('longform',this)">
+          <input type="radio" name="vtype" value="longform" checked/>
+          <span class="radio-label">Long-form (8–12 min)</span>
+          <span class="radio-cpm">Full ad revenue</span>
+        </label>
+        <label class="radio-option" onclick="selectType('shorts',this)">
+          <input type="radio" name="vtype" value="shorts"/>
+          <span class="radio-label">YouTube Shorts</span>
+          <span class="radio-cpm">~45% of long-form RPM</span>
+        </label>
+        <label class="radio-option" onclick="selectType('mixed',this)">
+          <input type="radio" name="vtype" value="mixed"/>
+          <span class="radio-label">Mixed (long-form + Shorts)</span>
+          <span class="radio-cpm">~70% blended RPM</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- INPUT PANEL 2: NICHE & COUNTRY -->
+  <div class="panel">
+    <div class="panel-title">Niche & Audience</div>
+
+    <div class="field">
+      <label>Niche</label>
+      <select id="niche" onchange="calc()">
+        <option value="finance">Finance & Investing — $15–$60 CPM</option>
+        <option value="tech">Technology & AI — $10–$25 CPM</option>
+        <option value="psychology">Psychology & Behavior — $8–$22 CPM</option>
+        <option value="history" selected>History & Documentary — $5–$18 CPM</option>
+        <option value="truecrime">True Crime & Mystery — $6–$20 CPM</option>
+        <option value="animals">Animals & Wildlife — $4–$12 CPM</option>
+        <option value="motivation">Motivation & Self-Improvement — $5–$15 CPM</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Primary Audience Country</label>
+      <select id="country" onchange="calc()">
+        <option value="usa" selected>🇺🇸 United States — Highest CPM</option>
+        <option value="uk">🇬🇧 United Kingdom — High CPM</option>
+        <option value="canada">🇨🇦 Canada — High CPM</option>
+        <option value="australia">🇦🇺 Australia — High CPM</option>
+        <option value="mixed_high">USA + UK + CA + AU (mixed)</option>
+        <option value="global">General Global Audience</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Mid-Roll Ads Enabled?</label>
+      <select id="midroll" onchange="calc()">
+        <option value="yes" selected>Yes — enabled on all 8+ min videos</option>
+        <option value="no">No — pre-roll only</option>
+        <option value="na">Not applicable (Shorts)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Monthly Affiliate Income Estimate</label>
+      <input type="number" id="affiliate" value="0" min="0" max="50000" step="10" oninput="calc()" placeholder="e.g. 150"/>
+      <div style="font-size:0.72rem;color:#9ca3af;margin-top:4px;">Add estimated monthly affiliate commissions ($). Enter 0 if none yet.</div>
+    </div>
+  </div>
+
+  <!-- RESULTS — full width -->
+  <div class="results-panel full-row">
+    <div class="panel-title">Estimated Monthly Earnings</div>
+
+    <div class="results-grid">
+      <div class="result-card primary">
+        <div class="r-label">Ad Revenue</div>
+        <div class="r-val" id="res-ads">$0</div>
+        <div class="r-sub" id="res-rpm">RPM: $0.00</div>
+      </div>
+      <div class="result-card primary">
+        <div class="r-label">Total Income</div>
+        <div class="r-val" id="res-total">$0</div>
+        <div class="r-sub">Ads + Affiliate</div>
+      </div>
+      <div class="result-card secondary">
+        <div class="r-label">Annual Projection</div>
+        <div class="r-val" id="res-annual">$0</div>
+        <div class="r-sub">at current rate</div>
+      </div>
+      <div class="result-card secondary">
+        <div class="r-label">Effective CPM</div>
+        <div class="r-val" id="res-cpm">$0.00</div>
+        <div class="r-sub">per 1,000 views</div>
+      </div>
+    </div>
+
+    <!-- Breakdown table -->
+    <table class="breakdown">
+      <thead>
+        <tr><th>Component</th><th>Detail</th><th>Monthly $</th></tr>
+      </thead>
+      <tbody id="breakdown-body">
+        <tr><td colspan="3" style="color:#9ca3af;text-align:center;padding:16px">Adjust inputs above to see breakdown</td></tr>
+      </tbody>
+    </table>
+
+    <!-- YPP Milestone progress -->
+    <div class="milestone">
+      <div class="milestone-title">YPP Milestone Progress</div>
+      <div class="m-row">
+        <div class="m-label">Shorts path: 10M views / 90 days</div>
+        <div class="m-bar-wrap"><div class="m-bar" id="bar-shorts" style="background:#2563eb;width:0%"></div></div>
+        <div class="m-pct" id="pct-shorts" style="color:#2563eb">0%</div>
+      </div>
+      <div class="m-row">
+        <div class="m-label">Long-form: 4,000 watch hours / 12 months</div>
+        <div class="m-bar-wrap"><div class="m-bar" id="bar-wh" style="background:#7c3aed;width:0%"></div></div>
+        <div class="m-pct" id="pct-wh" style="color:#7c3aed">0%</div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Important:</strong> These are estimates based on typical industry CPM ranges. Actual earnings depend on your specific audience, content quality, advertiser demand, time of year, and YouTube's revenue share. Use these figures for planning purposes only — not as guarantees. CPM fluctuates significantly between Q1 (lowest) and Q4 (highest, often 30–50% above average).
+    </div>
+  </div>
+
+</div>
+
+<script>
+// CPM ranges [min, mid, max] by niche
+const CPM = {
+  finance:    [15, 28, 60],
+  tech:       [10, 16, 25],
+  psychology: [8,  14, 22],
+  history:    [5,  10, 18],
+  truecrime:  [6,  11, 20],
+  animals:    [4,   7, 12],
+  motivation: [5,  9,  15],
+};
+
+// Country multiplier on top of niche CPM
+const COUNTRY_MULT = {
+  usa:        1.0,
+  uk:         0.82,
+  canada:     0.78,
+  australia:  0.76,
+  mixed_high: 0.88,
+  global:     0.42,
+};
+
+// Video type RPM multiplier
+const TYPE_MULT = { longform: 1.0, shorts: 0.45, mixed: 0.70 };
+
+// Mid-roll multiplier (mid-rolls roughly double revenue on long-form)
+const MIDROLL_MULT = { yes: 1.85, no: 1.0, na: 1.0 };
+
+// AVD quality multiplier — low AVD = fewer ads served
+function avdMult(avd) {
+  if (avd >= 60) return 1.0;
+  if (avd >= 45) return 0.9;
+  if (avd >= 30) return 0.75;
+  return 0.55;
+}
+
+function fmt(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + Math.round(n).toLocaleString();
+  return '$' + n.toFixed(0);
+}
+
+function fmtViews(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n/1000).toFixed(0) + 'K';
+  return n.toString();
+}
+
+function selectType(val, el) {
+  document.querySelectorAll('.radio-option').forEach(r => r.classList.remove('selected'));
+  el.classList.add('selected');
+  calc();
+}
+
+function calc() {
+  const views    = parseInt(document.getElementById('views').value);
+  const avd      = parseInt(document.getElementById('avd').value);
+  const niche    = document.getElementById('niche').value;
+  const country  = document.getElementById('country').value;
+  const midroll  = document.getElementById('midroll').value;
+  const affiliate= parseFloat(document.getElementById('affiliate').value) || 0;
+  const vtype    = document.querySelector('input[name=vtype]:checked')?.value || 'longform';
+
+  // Update display values
+  document.getElementById('views-val').textContent = views.toLocaleString();
+  document.getElementById('avd-val').textContent   = avd + '%';
+
+  // Calculate RPM
+  const [cpmMin, cpmMid, cpmMax] = CPM[niche];
+  const baseCpm   = cpmMid;
+  const rpm       = baseCpm * COUNTRY_MULT[country] * TYPE_MULT[vtype] * MIDROLL_MULT[midroll] * avdMult(avd);
+
+  const adRevenue = (views / 1000) * rpm;
+  const total     = adRevenue + affiliate;
+
+  // Update result cards
+  document.getElementById('res-ads').textContent    = fmt(adRevenue);
+  document.getElementById('res-rpm').textContent    = 'RPM: $' + rpm.toFixed(2);
+  document.getElementById('res-total').textContent  = fmt(total);
+  document.getElementById('res-annual').textContent = fmt(total * 12);
+  document.getElementById('res-cpm').textContent    = '$' + rpm.toFixed(2);
+
+  // Breakdown table
+  const avgVideoLength = vtype === 'shorts' ? 0.5 : 10; // minutes
+  const watchHoursMonth = (views * (avd/100) * avgVideoLength) / 60;
+  const midrollNote = midroll === 'yes' ? '× 1.85 mid-roll boost' : midroll === 'no' ? 'Pre-roll only' : 'N/A for Shorts';
+
+  document.getElementById('breakdown-body').innerHTML = `
+    <tr><td>Base CPM (${niche})</td><td>${country.toUpperCase()} audience</td><td class="hl">$${baseCpm.toFixed(2)}</td></tr>
+    <tr><td>Country multiplier</td><td>${(COUNTRY_MULT[country]*100).toFixed(0)}% of base CPM</td><td class="hl">$${(baseCpm * COUNTRY_MULT[country]).toFixed(2)}</td></tr>
+    <tr><td>Video type</td><td>${vtype} (${(TYPE_MULT[vtype]*100).toFixed(0)}%)</td><td class="hl">×${TYPE_MULT[vtype]}</td></tr>
+    <tr><td>Mid-roll ads</td><td>${midrollNote}</td><td class="hl">×${MIDROLL_MULT[midroll]}</td></tr>
+    <tr><td>AVD quality (${avd}%)</td><td>Affects ads served per view</td><td class="hl">×${avdMult(avd)}</td></tr>
+    <tr style="font-weight:600"><td>Effective RPM</td><td>${views.toLocaleString()} views ÷ 1,000</td><td class="hl">$${rpm.toFixed(2)}</td></tr>
+    <tr style="background:#eff6ff"><td><strong>Ad Revenue</strong></td><td></td><td class="hl"><strong>${fmt(adRevenue)}</strong></td></tr>
+    <tr><td>Affiliate Income</td><td>Manual estimate</td><td class="hl">${fmt(affiliate)}</td></tr>
+    <tr style="background:#d1fae5;font-weight:600"><td><strong>Total Monthly</strong></td><td></td><td class="hl"><strong>${fmt(total)}</strong></td></tr>
+    <tr><td>Watch hours this month</td><td>Needed for long-form YPP</td><td>${Math.round(watchHoursMonth).toLocaleString()} hrs</td></tr>
+  `;
+
+  // YPP milestone bars
+  // Shorts: 10M views / 90 days = ~3.33M/month
+  const shortsMonthly = 10000000 / 3;
+  const shortsPct = Math.min(100, (views / shortsMonthly) * 100);
+  document.getElementById('bar-shorts').style.width = shortsPct + '%';
+  document.getElementById('pct-shorts').textContent = Math.round(shortsPct) + '%';
+
+  // Long-form: 4000 watch hours / 12 months
+  const whMonthly = 4000 / 12;
+  const whPct = Math.min(100, (watchHoursMonth / whMonthly) * 100);
+  document.getElementById('bar-wh').style.width = whPct + '%';
+  document.getElementById('pct-wh').textContent = Math.round(whPct) + '%';
+}
+
+// Run on load
+calc();
+</script>
+</body>
+</html>
