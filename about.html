@@ -18,7 +18,7 @@
 .story-block h2{font-size:clamp(1.5rem,2.8vw,2rem);margin-bottom:1rem;}
 .story-block p{font-size:0.95rem;color:var(--muted);line-height:1.85;margin-bottom:0.9rem;}
 .story-block p:last-child{margin-bottom:0;}
-.story-img img,.story-img .img-ph{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
+.story-img img,.story-img .img-ph{width:100%;object-fit:cover;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);}
 .story-screenshot{margin-top:14px;background:var(--bg2);border:1px dashed var(--border2);border-radius:var(--radius-sm);padding:12px 14px;font-size:0.78rem;color:var(--muted2);}
 .tl-section{background:var(--bg);padding:80px 5%;border-top:1px solid var(--border);}
 .tl-inner{max-width:700px;margin:48px auto 0;position:relative;}
@@ -86,7 +86,7 @@ cite{font-size:0.82rem;color:rgba(255,255,255,0.5);font-style:normal;letter-spac
          style="width:100%;height:auto;display:block;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg)"
          onload="this.nextElementSibling.style.display='none'"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-    <div class="img-ph" style="display:none;aspect-ratio:3/4;border-radius:var(--radius-lg)">
+    <div class="img-ph" style="display:none;border-radius:var(--radius-lg)">
       <span class="ph-icon">📸</span>
       <span class="ph-name">marcus-portrait.jpg</span>
       <span class="ph-dims">600 × 800px — portrait</span>
@@ -116,7 +116,7 @@ cite{font-size:0.82rem;color:rgba(255,255,255,0.5);font-style:normal;letter-spac
          style="width:100%;height:auto;display:block;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)"
          onload="this.nextElementSibling.style.display='none'"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-    <div class="img-ph" style="display:none;aspect-ratio:4/3;border-radius:var(--radius-lg)">
+    <div class="img-ph" style="display:none;border-radius:var(--radius-lg)">
       <span class="ph-icon">📸</span>
       <span class="ph-name">marcus-early.jpg</span>
       <span class="ph-dims">800 × 600px</span>
@@ -262,7 +262,7 @@ cite{font-size:0.82rem;color:rgba(255,255,255,0.5);font-style:normal;letter-spac
       <img src="assets/images/analytics-views.jpg" alt="30-day analytics summary"
            onload="this.nextElementSibling.style.display='none'"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-      <div class="img-ph" style="aspect-ratio:16/9">
+      <div class="img-ph">
         <span class="ph-icon">📊</span>
         <span class="ph-name">analytics-views.jpg</span>
         <span class="ph-dims">1280 × 720px — 16:9</span>
